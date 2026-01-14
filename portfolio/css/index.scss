@@ -1,0 +1,316 @@
+@charset "UTF-8";
+
+@use "variable" as vr;
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  &.active {
+    background: vr.$main-c;
+    transition: all 0.3s;
+    z-index: 2000;
+  }
+
+  &_menu {
+    @include vr.font-k;
+  }
+
+  &_list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    @include vr.min(md) {
+      justify-content: center;
+    }
+  }
+  &_item {
+    padding: 25px;
+    margin-left: 80px;
+    font-size: 16px;
+    @include vr.min(md) {
+      padding: 0.2rem;
+      margin-left: 3rem;
+      font-size: 0.8rem;
+    }
+
+    &_con {
+      margin-right: 50px;
+    }
+
+    a {
+      text-decoration-line: none;
+      color: vr.$white-c;
+      &:hover {
+        color: vr.$accent-c;
+      }
+    }
+  }
+}
+
+.top {
+  &_mv {
+    background-color: vr.$main-c;
+    border-bottom-left-radius: 185px;
+    @include vr.min(md) {
+      background-color: vr.$white-c;
+    }
+
+    &_md {
+      display: none;
+      @include vr.min(md) {
+        display: block;
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    &_wrap {
+      display: flex;
+      max-width: 1630px;
+      margin: 0 auto;
+      @include vr.min(md) {
+        display: none;
+      }
+    }
+    &_inner {
+      position: relative;
+    }
+    &_img {
+      margin-left: auto;
+      padding-right: 280px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &_ttl {
+      color: vr.$white-c;
+      font-size: 85px;
+      @include vr.font-k;
+      letter-spacing: 0.8rem;
+      line-height: 6rem;
+      position: absolute;
+      top: 23%;
+      transform: translateY(55%);
+      margin-left: 210px;
+      text-align: right;
+
+      &_s {
+        position: absolute;
+        top: 495px;
+        left: 35rem;
+        color: vr.$accent-c;
+        letter-spacing: 2px;
+        font-size: 10px;
+
+        &::after {
+          position: absolute;
+          content: "";
+          margin: 0 10px;
+          width: 216px;
+          height: 7px;
+          border-bottom: 1px solid vr.$accent-c;
+          right: 121px;
+        }
+      }
+    }
+  }
+}
+.works {
+  &_ttl {
+    @include vr.sectionttl;
+    border-bottom: 1px solid vr.$main-c;
+    width: 175px;
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 30px;
+  }
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1090px;
+    margin: 0 auto;
+    @include vr.min(md) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+      width: 65%;
+    }
+
+    &_item {
+      .item_img {
+        margin-top: 50px;
+        width: 100%;
+        &:hover {
+          transform: translateY(-15px);
+          transition: transform 0.3s ease;
+        }
+      }
+      .item_txt {
+        margin-top: 15px;
+        @include vr.font-k;
+        color: vr.$sub-c;
+        font-size: 20px;
+        &_s {
+          @include vr.font-k;
+          color: vr.$main-c;
+          margin: 5px 0 7px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+}
+.about {
+  &_img {
+    width: 100%;
+    @include vr.min(md) {
+      width: 80%;
+    }
+  }
+  &_ttl {
+    @include vr.sectionttl;
+    border-bottom: 1px solid vr.$main-c;
+    width: 175px;
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 30px;
+  }
+
+  &_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 75px 0;
+    @include vr.min(md) {
+      flex-direction: column;
+      width: 100%;
+      padding: 50px 0;
+    }
+
+    &_r {
+      margin: 0 auto;
+    }
+  }
+
+  &_item {
+    @include vr.min(md) {
+      text-align: center;
+    }
+    &_more {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+  &_name {
+    display: flex;
+    font-size: 1.3rem;
+    @include vr.font-k;
+    color: vr.$sub-c;
+    font-weight: 100;
+
+    &_s {
+      font-size: 1rem;
+      align-content: flex-end;
+      margin-left: 15px;
+    }
+  }
+
+  &_txt {
+    @include vr.font-k;
+    color: vr.$sub-c;
+    font-size: 0.9rem;
+    line-height: 22px;
+    margin-top: 25px;
+    @include vr.min(md) {
+      text-align: left;
+    }
+  }
+
+  &_more {
+    text-align: center;
+    @include vr.font-k;
+    color: vr.$sub-c;
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: 100;
+    margin-top: 40px;
+    background: vr.$accent-c;
+    width: 142px;
+    height: 40px;
+    padding-top: 12px;
+    border-radius: 20px;
+    text-decoration-line: none;
+    &:hover {
+      color: vr.$accent-c;
+      background: vr.$sub-c;
+    }
+  }
+}
+.footer {
+  position: relative;
+  background-color: vr.$main-c;
+  height: 330px;
+  &_inner {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 80px;
+    @include vr.min(md) {
+      max-width: 500px;
+    }
+  }
+
+  &_item {
+    list-style: none;
+    padding-bottom: 50px;
+    font-size: 16px;
+  }
+  &_box {
+    @include vr.font-k;
+  }
+
+  .content {
+    &_emil {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 258px;
+        border-bottom: 1px solid vr.$white-c;
+        right: -15px;
+        top: 30px;
+      }
+    }
+    &_img {
+      padding-bottom: 15px;
+    }
+  }
+  a {
+    text-decoration-line: none;
+    color: vr.$white-c;
+    font-size: 16px;
+    padding-left: 10px;
+    &:hover {
+      color: vr.$accent-c;
+    }
+  }
+
+  .namuc {
+    color: vr.$white-c;
+    font-size: 16px;
+    text-align: center;
+  }
+}

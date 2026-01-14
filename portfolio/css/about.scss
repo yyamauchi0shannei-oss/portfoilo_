@@ -1,0 +1,473 @@
+@charset "UTF-8";
+
+@use "variable" as vr;
+
+.header {
+  background: vr.$main-c;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+
+  &_menu {
+    @include vr.font-k;
+  }
+
+  &_list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    @include vr.min(md) {
+      justify-content: center;
+    }
+  }
+  &_item {
+    padding: 25px;
+    margin-left: 80px;
+    font-size: 16px;
+    @include vr.min(md) {
+      padding: 0.2rem;
+      margin-left: 3rem;
+      font-size: 0.8rem;
+    }
+
+    &_con {
+      margin-right: 50px;
+    }
+    a {
+      text-decoration-line: none;
+      color: vr.$white-c;
+      &:hover {
+        color: vr.$accent-c;
+      }
+    }
+  }
+}
+
+.top {
+  &_md {
+    display: none;
+    @include vr.min(md) {
+      display: block;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  &_wrap {
+    background: vr.$main-c;
+    height: 300px;
+    border-bottom-left-radius: 185px;
+    @include vr.min(md) {
+      display: none;
+    }
+  }
+
+  &_ttl {
+    @include vr.font-k;
+    color: vr.$white-c;
+    padding: 125px 275px 0;
+    &_l {
+      font-size: 80px;
+    }
+    &_s {
+      margin-top: 15px;
+      font-size: 16px;
+    }
+  }
+}
+.profile {
+  &_ttl {
+    max-width: 980px;
+    width: 90%;
+    padding-top: 170px;
+    margin: 0 auto;
+    position: relative;
+
+    .about_line {
+      padding: 30px 0 80px;
+      text-align: center;
+      img {
+        width: 100%;
+      }
+    }
+
+    &_l {
+      @include vr.font-k;
+      font-size: 3rem;
+      color: vr.$sub-c;
+      letter-spacing: 5px;
+    }
+    &_s {
+      @include vr.font-k;
+      font-size: 1.5rem;
+      margin-top: 12px;
+      color: vr.$sub-c;
+    }
+  }
+  &_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include vr.min(md) {
+      flex-direction: column;
+    }
+  }
+  &_img {
+    img {
+      width: 100%;
+    }
+  }
+  &_name {
+    @include vr.font-k;
+    color: vr.$sub-c;
+    font-size: 24px;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+
+    &_s {
+      font-size: 16px;
+      margin-left: 20px;
+      color: #e5c95b;
+      letter-spacing: 3px;
+    }
+  }
+  &_txt {
+    margin-top: 40px;
+    width: 372px;
+    color: vr.$sub-c;
+    font-size: 15px;
+
+    .txt_top {
+      display: block;
+      margin-bottom: 25px;
+    }
+    .txt_bottom {
+      display: block;
+      line-height: 22px;
+    }
+  }
+}
+.biography {
+  &_ttl {
+    max-width: 980px;
+    width: 90%;
+    padding-top: 170px;
+    margin: 0 auto;
+    position: relative;
+
+    .about_line {
+      padding: 30px 0 80px;
+      text-align: center;
+      img {
+        width: 100%;
+      }
+    }
+
+    &_l {
+      @include vr.font-k;
+      font-size: 3rem;
+      color: vr.$sub-c;
+      letter-spacing: 5px;
+    }
+    &_s {
+      @include vr.font-k;
+      font-size: 1.5rem;
+      margin-top: 12px;
+      color: vr.$sub-c;
+    }
+  }
+  &_list {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+    list-style: none;
+    padding-left: 14rem;
+    @include vr.min(md) {
+      max-width: 480px;
+      width: 80%;
+      padding: 0px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      margin: 0 10px;
+      width: 860px;
+      border-bottom: 2px solid #4a4a44;
+      transform: rotate(90deg);
+      top: 360px;
+      left: -280px;
+      z-index: 50;
+      @include vr.min(md) {
+        display: none;
+      }
+    }
+  }
+  &_item {
+    color: vr.$sub-c;
+    padding-bottom: 75px;
+    &_year {
+      @include vr.font-k;
+      font-size: 16px;
+      margin-top: 30px;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: vr.$accent-c;
+        left: 153px;
+        z-index: 100;
+        @include vr.min(md) {
+          display: none;
+        }
+      }
+    }
+    &_ttl {
+      @include vr.font-k;
+      font-size: 22px;
+      padding: 10px;
+    }
+    &_txt {
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
+}
+
+.strengths {
+  &_ttl {
+    max-width: 980px;
+    width: 90%;
+    padding-top: 170px;
+    margin: 0 auto;
+    position: relative;
+    .about_line {
+      padding: 30px 0 80px;
+      text-align: center;
+      img {
+        width: 100%;
+      }
+    }
+
+    &_l {
+      @include vr.font-k;
+      font-size: 3rem;
+      color: vr.$sub-c;
+      letter-spacing: 5px;
+    }
+    &_s {
+      @include vr.font-k;
+      font-size: 1.5rem;
+      margin-top: 12px;
+      color: vr.$sub-c;
+    }
+  }
+  &_list {
+    max-width: 875px;
+    margin: 0 auto;
+    @include vr.min(md) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+    }
+  }
+  &_item {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 50px;
+    position: relative;
+    list-style: none;
+    @include vr.min(md) {
+      display: block;
+    }
+
+    &_nb {
+      position: absolute;
+      font-size: 17px;
+      color: #e5c95b;
+      top: -25px;
+      left: -5px;
+    }
+    &_ttl {
+      font-size: 17px;
+      @include vr.font-k;
+      color: vr.$sub-c;
+      width: 240px;
+      text-shadow: 5px 8px #dedede;
+      @include vr.min(md) {
+        margin: 20px 0;
+      }
+    }
+    &_txt {
+      width: 540px;
+      font-size: 15px;
+      color: vr.$sub-c;
+      line-height: 25px;
+      letter-spacing: 1px;
+      @include vr.min(md) {
+        margin-bottom: 30px;
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+.likes {
+  &_ttl {
+    max-width: 980px;
+    width: 90%;
+    padding-top: 170px;
+    margin: 0 auto;
+    position: relative;
+    .about_line {
+      padding: 30px 0 80px;
+      text-align: center;
+      img {
+        width: 100%;
+      }
+    }
+
+    &_l {
+      @include vr.font-k;
+      font-size: 3rem;
+      color: vr.$sub-c;
+      letter-spacing: 5px;
+    }
+    &_s {
+      @include vr.font-k;
+      font-size: 1.5rem;
+      margin-top: 12px;
+      color: vr.$sub-c;
+    }
+  }
+
+  &_list {
+    max-width: 980px;
+    margin: 0 auto;
+    padding-left: 20px;
+    @include vr.min(md) {
+      max-width: 595px;
+    }
+  }
+  &_item {
+    @include vr.min(md) {
+      width: 60%;
+    }
+
+    &_top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      @include vr.min(md) {
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        transition: all 1.5s;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        width: 90%;
+        @include vr.min(md) {
+          width: 100%;
+          padding-bottom: 30px;
+        }
+      }
+    }
+
+    &_bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 180px;
+      @include vr.min(md) {
+        flex-direction: column;
+        align-items: center;
+        height: 0;
+        overflow: hidden;
+        transition: all 1.5s;
+      }
+      img {
+        display: block;
+        max-width: 980px;
+        width: 90%;
+        @include vr.min(md) {
+          width: 100%;
+          padding-top: 50px;
+        }
+      }
+    }
+  }
+  .more-btn {
+    display: none;
+    @include vr.min(md) {
+      display: block;
+      margin: 0 auto;
+      color: vr.$white-c;
+      background-color: vr.$sub-c;
+      border-radius: 6px;
+      padding: 10px 35px;
+      border: none;
+    }
+  }
+}
+.footer {
+  position: relative;
+  background-color: vr.$main-c;
+  height: 330px;
+  &_inner {
+    display: flex;
+    justify-content: space-around;
+    width: 1020px;
+    margin: 0 auto;
+    padding-top: 80px;
+    @include vr.min(md) {
+      width: 100%;
+    }
+  }
+
+  &_item {
+    list-style: none;
+    padding-bottom: 50px;
+    font-size: 16px;
+  }
+  &_box {
+    @include vr.font-k;
+  }
+
+  .content {
+    &_emil {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 258px;
+        border-bottom: 1px solid vr.$white-c;
+        right: -15px;
+        top: 30px;
+      }
+    }
+    &_img {
+      padding-bottom: 15px;
+    }
+  }
+  a {
+    text-decoration-line: none;
+    color: vr.$white-c;
+    font-size: 16px;
+    padding-left: 10px;
+    &:hover {
+      color: vr.$accent-c;
+    }
+  }
+
+  .namuc {
+    color: vr.$white-c;
+    font-size: 16px;
+    text-align: center;
+  }
+}

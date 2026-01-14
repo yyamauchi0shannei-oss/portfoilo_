@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+@use "variable" as vr;
+.header {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+
+  &_menu {
+    @include vr.font-k;
+  }
+
+  &_list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    @include vr.min(md) {
+      justify-content: center;
+    }
+  }
+  &_item {
+    padding: 25px;
+    margin-left: 80px;
+    font-size: 16px;
+    @include vr.min(md) {
+      padding: 0.2rem;
+      margin-left: 3rem;
+      font-size: 0.8rem;
+    }
+    &_con {
+      margin-right: 50px;
+    }
+    a {
+      text-decoration-line: none;
+      color: vr.$sub-c;
+      position: relative;
+      &::before {
+        background: vr.$accent-c;
+        content: "";
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        transform-origin: right top;
+        transform: scale(0, 1);
+        transition: transform 0.3s;
+      }
+      &:hover::before {
+        transform-origin: left top;
+        transform: scale(1, 1);
+      }
+    }
+  }
+}
+
+.main_ttl {
+  &_inner {
+    margin: 55px 75px 0;
+  }
+  .ttl {
+    &_b {
+      padding-right: 75px;
+      border-right: 3px solid vr.$grey-c;
+      @include vr.min(md) {
+        border-right: 1px solid vr.$grey-c;
+        padding-right: 20px;
+      }
+    }
+
+    &_kana {
+      @include vr.font-k;
+      color: vr.$main-c;
+      font-size: 22px;
+      margin-bottom: 20px;
+      @include vr.min(md) {
+        font-size: 0.9rem;
+      }
+    }
+    &_big {
+      display: flex;
+      align-items: center;
+      @include vr.font-k;
+      font-size: 60px;
+      color: vr.$sub-c;
+      position: relative;
+      font-weight: 600;
+      letter-spacing: 3px;
+      @include vr.min(md) {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+    }
+    &_s {
+      position: relative;
+      @include vr.font-g;
+      color: vr.$main-c;
+      font-weight: 100;
+      font-size: 22px;
+      letter-spacing: 1px;
+      padding-left: 75px;
+      @include vr.min(md) {
+        font-size: 0.7rem;
+        padding-left: 20px;
+      }
+    }
+  }
+}
+.profile_mv {
+  &_img {
+    img {
+      max-width: 1200px;
+      width: 100%;
+      @include vr.min(md) {
+        max-width: 600px;
+      }
+    }
+  }
+
+  &_inner {
+    margin-top: 100px;
+    text-align: center;
+  }
+}
+.profile {
+  &_detail {
+    max-width: 800px;
+    margin: 0 auto;
+    color: vr.$sub-c;
+    padding: 50px 0 150px;
+    @include vr.min(md) {
+      max-width: 520px;
+    }
+
+    .detail {
+      border-top: solid 1px vr.$grey-c;
+      display: flex;
+      justify-content: flex-start;
+      font-size: 15px;
+      padding: 50px 20px;
+
+      &_ttl {
+        width: 137px;
+        letter-spacing: 2px;
+        @include vr.min(md) {
+          margin-bottom: 20px;
+        }
+      }
+
+      &_txt {
+        padding-left: 60px;
+        font-size: 15px;
+        letter-spacing: 2px;
+        line-height: 18px;
+        @include vr.min(md) {
+          font-size: 10px;
+        }
+      }
+
+      &_last {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: "";
+          margin: 0 10px;
+          width: 800px;
+          border-bottom: 1px solid vr.$grey-c;
+          right: -10px;
+          bottom: 0px;
+          @include vr.min(md) {
+            width: 520px;
+          }
+        }
+      }
+    }
+  }
+  &_item {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 180px;
+
+    &_img {
+      filter: drop-shadow(5px 5px 10px vr.$grey-c);
+      img {
+        width: 100%;
+        max-width: 1200px;
+        @include vr.min(md) {
+          max-width: 350px;
+        }
+      }
+      .img01 {
+        @include vr.min(md) {
+          padding-top: 10px;
+        }
+      }
+    }
+  }
+}
+.footer {
+  position: relative;
+  background-color: vr.$main-c;
+  height: 330px;
+  &_inner {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 80px;
+  }
+
+  &_item {
+    list-style: none;
+    padding-bottom: 50px;
+    font-size: 16px;
+  }
+  &_box {
+    @include vr.font-k;
+  }
+
+  .content {
+    &_emil {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 258px;
+        border-bottom: 1px solid vr.$white-c;
+        right: -15px;
+        top: 30px;
+      }
+    }
+    &_img {
+      padding-bottom: 15px;
+    }
+  }
+  a {
+    text-decoration-line: none;
+    color: vr.$white-c;
+    font-size: 16px;
+    padding-left: 10px;
+    &:hover {
+      color: vr.$accent-c;
+    }
+  }
+
+  .namuc {
+    color: vr.$white-c;
+    font-size: 16px;
+    text-align: center;
+  }
+}

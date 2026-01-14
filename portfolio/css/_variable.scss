@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+//color
+$main-c: #738ca9;
+$sub-c: #3f648d;
+$accent-c: #fedf66;
+$white-c: #ffff;
+$grey-c: #d9d9d9;
+
+//font
+@mixin font-k() {
+  font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体",
+    "sans-serif";
+}
+
+@mixin font-g() {
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic",
+    メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+}
+
+//sectionタイトル
+@mixin sectionttl() {
+  font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体",
+    "sans-serif";
+  font-size: 50px;
+  text-align: center;
+  margin: 150px 0 35px;
+  color: #{$sub-c};
+  position: relative;
+  font-weight: 600;
+}
+
+//ブレイクポイント
+$breakpoints: (
+  md: 767px,
+) !default;
+@mixin min($breakpoint) {
+  @media (width <= #{map-get($breakpoints,$breakpoint)}) {
+    @content;
+  }
+}
